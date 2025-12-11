@@ -1,0 +1,127 @@
+:root {
+    --bg1: rgb(20, 20, 20);
+    --bg2: rgb(31, 31, 31);
+    --bg1-invert: white;
+    --text1: white;
+    --border-radius: 10px;
+    --inf: 999999px;
+    --spacing: 10px;
+    --icon-size: 2rem;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+
+    font-family: Arial, Helvetica, sans-serif;
+
+    color: var(--text1);
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+
+    background-color: var(--bg1);
+}
+
+header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    position: sticky;
+
+    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.25);
+
+    padding: 12px 16px;
+    min-height: 56px;
+
+    background-color: var(--bg2);
+}
+
+main {
+    padding: 10%;
+}
+
+.to-do-container {
+    background-color: var(--bg2);
+
+    border-radius: var(--border-radius);
+    border: solid 0.1px color-mix(in srgb, var(--bg1) 50%, var(--bg1-invert) 20%);
+
+    .top-bar {
+        padding: var(--spacing);
+
+        background-color: color-mix(in srgb, var(--bg1) 50%, var(--bg1-invert) 10%);
+    }
+    .body {
+        padding: var(--spacing);
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+/* To do item */
+
+.to-do-item {
+    --item-color: brown;
+    width: 90%;
+
+    border-radius: var(--border-radius);
+
+    background-color: color-mix(in srgb, var(--item-color) 50%, var(--bg1-invert) 30%);
+
+    .top-bar {
+        background-color: brown;
+
+        border-radius: var(--border-radius);
+
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+
+        gap: var(--spacing);
+
+        .middle {flex: 1;
+            
+        }
+    }
+    .content {
+        display: none;
+
+        padding: var(--spacing);
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .content.ct-active {
+        display: block;
+    }
+}
+
+.checkmark {
+    border-radius: var(--inf);
+    border: solid 4px var(--text1);
+
+    width: var(--icon-size);
+    aspect-ratio: 1/1;
+}
+
+.expand-arrow {
+    transition: 3s ease-in-out;
+
+    width: var(--icon-size);
+    aspect-ratio: 1/1;
+}
+
+
+/* class toggler cfg */
+.ct-toggler:hover {
+    cursor: pointer;
+}
