@@ -6,7 +6,7 @@
     --border-radius: 10px;
     --inf: 999999px;
     --spacing: 10px;
-    --icon-size: 2rem;
+    --icon-size: 1rem;
 }
 
 * {
@@ -69,7 +69,7 @@ main {
 
 .to-do-item {
     --item-color: brown;
-    width: 90%;
+    width: 100%;
 
     border-radius: var(--border-radius);
 
@@ -107,7 +107,7 @@ main {
 
 .checkmark {
     border-radius: var(--inf);
-    border: solid 4px var(--text1);
+    border: solid 2px var(--text1);
 
     width: var(--icon-size);
     aspect-ratio: 1/1;
